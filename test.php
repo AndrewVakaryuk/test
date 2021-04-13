@@ -8,7 +8,7 @@ function whichPackagesToLoad(int $truckSpace, array $packages){
   $length = count($packages) - 1;
   $diff = PHP_INT_MAX;
 
-  //in case we have number, sum of which equals to $truckSpace
+  //in case we have numbers, sum of which equals to $truckSpace
   foreach ($packages as $key=>$value) {
     $pair = $truckSpace - $value;
     unset($packages[$key]);
@@ -18,7 +18,7 @@ function whichPackagesToLoad(int $truckSpace, array $packages){
     }
     $packages[$key] = $value;
   }
-  // in case we don't have element sum of which equals to $truckSpace, we find the closest
+  // in case we don't have elements, sum of which equals to $truckSpace, we find the closest
   if (count($result) == 0) {
     $start = 0;
       while ($start < $length) {
@@ -38,7 +38,6 @@ function whichPackagesToLoad(int $truckSpace, array $packages){
         }
     array_push($result, $packages[$res_s], $packages[$res_l]);
   }
-  
   
   return $result ;
 };
