@@ -22,14 +22,11 @@ function whichPackagesToLoad(int $truckSpace, array $packages){
   if (count($result) == 0) {
     $start = 0;
       while ($start < $length) {
-        if (($packages[$start] + $packages[$length] - $truckSpace) <  $diff)
-    {
+        if (($packages[$start] + $packages[$length] - $truckSpace) <  $diff){
         $res_s = $start;
         $res_l = $length;
-        $diff = $packages[$start] + $packages[$length] - $truckSpace;
-        
-    }
-  
+        $diff = $packages[$start] + $packages[$length] - $truckSpace; 
+        }
         if ($packages[$start] + $packages[$length] > $truckSpace)
         $length--;
           
